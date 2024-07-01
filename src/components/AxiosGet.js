@@ -11,17 +11,20 @@ function AxiosGet(){
     //     })
     // }
 
-    async function get() {
+    
+    useEffect(()=>{
+      async function get() {
         try {
             const response = await axios.get('https://jsonplaceholder.typicode.com/users');
             console.log(response);
             setUserdata(response.data);
+            
         } catch (error) {
             console.error("Error fetching data: ", error);
         }
     }
-    useEffect(()=>{
-      get()
+    get()
+      
     },[])
    
 
